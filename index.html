@@ -7,7 +7,7 @@
 	</div>
 </html>
 <script
-	src="js/jquery-3.0.0.min.js"
+	src="https://code.jquery.com/jquery-3.0.0.min.js"
 	integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
 	crossorigin="anonymous">
 </script>
@@ -18,9 +18,9 @@ $(document).on("click", "#aan", function (e) {
         url: 'http://192.168.1.54/server.php',
         type: 'get',
         data: "power=on"
-    }).done(function() {
-	alert("succes hendrik");
-	$('#successMessage').html(html);
+    }).done(function(html) {
+		alert("success");
+		$('#successMessage').html(html);
     });
 });
 $(document).on("click", "#uit", function (e) {
