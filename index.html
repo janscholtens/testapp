@@ -21,6 +21,8 @@ $(document).on("click", "#aan", function (e) {
     }).done(function(html) {
 		alert("success");
 		$('#successMessage').html(html);
+    }).always(function() {
+		alert("moi");
     });
 });
 $(document).on("click", "#uit", function (e) {
