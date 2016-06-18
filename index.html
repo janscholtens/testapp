@@ -1,1 +1,30 @@
-Hello to the world banana2!
+<html>
+	<div id="container">
+		<h1>Banaan</h1>
+		<button id="contactServer">Verbindtdt</button>	
+		<div id="successMessage"></div>
+	</div>
+</html>
+<script
+	src="https://code.jquery.com/jquery-3.0.0.min.js"
+	integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
+	crossorigin="anonymous">
+</script>
+			  
+<script type="text/javascript">
+$(document).on("click", "#contactServer", function (e) {
+	alert("werkt");
+    $.ajax({
+        url: '192.168.1.54',
+        type: 'get',
+        data: "?led=on"
+    }).done(function() {
+		alert("success");
+		$('#successMessage').html(html);	
+    }).fail(function(){
+		alert("dikke fail");
+	}).always(function(){
+		alert("hij doet tenminste iets")
+	});
+});
+</script>
