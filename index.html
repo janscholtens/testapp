@@ -1,7 +1,8 @@
 <html>
 	<div id="container">
 		<h1>Banaan</h1>
-		<button id="contactServer">Verbindtdt</button>	
+		<button id="aan">Aan</button>
+		<button id="uit">Uit</button>	
 		<div id="successMessage"></div>
 	</div>
 </html>
@@ -12,19 +13,18 @@
 </script>
 			  
 <script type="text/javascript">
-$(document).on("click", "#contactServer", function (e) {
-	alert("werkt");
+$(document).on("click", "#aan", function (e) {
     $.ajax({
-        url: '192.168.1.54',
+        url: 'http://192.168.1.54/server.php',
         type: 'get',
-        data: "?led=on"
-    }).done(function() {
-		alert("success");
-		$('#successMessage').html(html);	
-    }).fail(function(){
-		alert("dikke fail");
-	}).always(function(){
-		alert("hij doet tenminste iets")
+        data: "power=on"
+    });
+});
+$(document).on("click", "#uit", function (e) {
+	$.ajax({
+		url: 'http://192.168.1.54/server.php',
+		type: 'get',
+		data: "power=off"
 	});
 });
 </script>
