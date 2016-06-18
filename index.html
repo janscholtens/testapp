@@ -18,6 +18,9 @@ $(document).on("click", "#aan", function (e) {
         url: 'http://192.168.1.54/server.php',
         type: 'get',
         data: "power=on"
+    }).done(function() {
+	alert("succes hendrik");
+	$('#successMessage').html(html);
     });
 });
 $(document).on("click", "#uit", function (e) {
