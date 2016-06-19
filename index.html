@@ -1,9 +1,8 @@
 <html>
 	<div id="container">
 		<h1>Banaan</h1>
-		<button id="aan">Aan</button>
-		<button id="uit">Uit</button>	
-		<button id="Test" data-role="button" onclick="change_page();">Test</button>
+		<button id="Aan" data-role="button" onclick="lamp_aan();">Aan</button>
+		<button id="Uit" data-role="button" onclick="lamp_uit();">Uit</button>
 		<div id="successMessage"></div>
 	</div>
 </html>
@@ -18,31 +17,15 @@
 			   
 <script type="text/javascript">
 document.addEventListener("deviceready", onDeviceReady, false);
-function change_page() {
-    alert("klikkkkkakkkkkskk");
+function lamp_aan() {
 	$.ajax({
         url: 'http://192.168.1.54/server.php?power=on'
-    }).done(function() {
-		alert("success");
-	}).fail( function(xhr, textStatus, errorThrown) {
-        alert(xhr.responseText);
-	}).always(function() {
-		alert("moi");
     });
 }
 
-$(document).on("click", "#aan", function (e) {
-    $.ajax({
-        url: 'http://192.168.1.54/server.php',
-        type: 'get',
-        data: "power=on"
-    });
-});
-$(document).on("click", "#uit", function (e) {
+function lamp_uit() {
 	$.ajax({
-		url: 'http://192.168.1.54/server.php',
-		type: 'get',
-		data: "power=off"
-	});
-});
+		url: 'http://192.168.1.54/server.php?power=off'
+		});
+}
 </script>
