@@ -1,41 +1,38 @@
 <html>
-<body onload="init();">
 	<div id="container">
-		<h1>Banaanaa</h1>
+		<h1>Banaan</h1>
 		<button id="aan">Aan</button>
 		<button id="uit">Uit</button>	
+		<button id="Test" data-role="button" onclick="change_page();">Test</button>
 		<div id="successMessage"></div>
 	</div>
-</body>
 </html>
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
 <script
-	src="https://code.jquery.com/jquery-3.0.0.min.js"
+	src="js/jquery-3.0.0.min.js"
 	integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
 	crossorigin="anonymous">
 </script>
-<script 
-    src="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.js">
-</script>
-<script src="phonegap.js"></script>
-			  
+			   
 <script type="text/javascript">
-alert("hendrika");
-$(document).on('pageinit','[data-role=page]',function(){
-    $('#aan').click(function(){
-        alert('button clicked');
-    });
-});
-$(document).on("click", "#aan", function (e) {
-    $.ajax({
+function change_page() {
+    alert("klikkkkkkkkkkkk");
+	$.ajax({
         url: 'http://192.168.1.54/server.php',
         type: 'get',
         data: "power=on"
     }).done(function(html) {
 		alert("success");
 		$('#successMessage').html(html);
-    }).always(function() {
+	}).always(function() {
 		alert("moi");
+    });
+}
+
+$(document).on("click", "#aan", function (e) {
+    $.ajax({
+        url: 'http://192.168.1.54/server.php',
+        type: 'get',
+        data: "power=on"
     });
 });
 $(document).on("click", "#uit", function (e) {
@@ -46,4 +43,3 @@ $(document).on("click", "#uit", function (e) {
 	});
 });
 </script>
-
