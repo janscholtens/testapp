@@ -1,31 +1,30 @@
 <html>
 	<div id="container">
 		<h1>Rob's app</h1>
-		<button id="Aan" data-role="button" onclick="lamp_aan();">Aan</button>
-		<button id="Uit" data-role="button" onclick="lamp_uit();">Uit</button>
+		1: 
+		<button id="1Aan" data-role="button" onclick="lamp_au('power=1on');">Aan</button>
+		<button id="1Uit" data-role="button" onclick="lamp_au('power=1off');">Uit</button>
+		<br>
+		2: 
+		<button id="2Aan" data-role="button" onclick="lamp_au('power=2on');">Aan</button>
+		<button id="2Uit" data-role="button" onclick="lamp_au('power=2off');">Uit</button>
 		<div id="successMessage"></div>
+		<br>
+		Alles: 
+		<button id="allesAan" data-role="button" onclick="lamp_au('power=allon');">Aan</button>
+		<button id="allesUit" data-role="button" onclick="lamp_au('power=alloff');">Uit</button>
 	</div>
 </html>
-<!-- <script
-	src="js/jquery-3.0.0.min.js"
-	integrity="sha256-JmvOoLtYsmqlsWxa7mDSLMwa6dZ9rrIdtrrVYRnDRH0="
-	crossorigin="anonymous">
-</script>
-<script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script> -->
 <script type="text/javascript" src="js/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
 			   
 <script type="text/javascript">
 
-function lamp_aan() {
+function lamp_au(lamp) {
 	$.ajax({
-        url: 'http://192.168.1.54/server.php?power=2on'
+        url: 'http://192.168.1.54/server.php',
+		type: 'get',
+		data: lamp
     });
-}
-
-function lamp_uit() {
-	$.ajax({
-		url: 'http://192.168.1.54/server.php?power=2off'
-		});
 }
 </script>
