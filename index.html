@@ -21,9 +21,8 @@ document.addEventListener("deviceready", onDeviceReady, false);
 function change_page() {
     alert("klikkkkkakkkkkskk");
 	$.ajax({
-        url: 'http://192.168.1.54/server.php',
-        type: 'get',
-        data: "power=on"
+        url: 'http://192.168.1.54/server.php?power=on',
+        type: 'get'
     }).done(function(html) {
 		alert("success");
 		$('#successMessage').html(html);
