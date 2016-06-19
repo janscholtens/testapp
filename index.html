@@ -1,6 +1,6 @@
 <html>
 	<div id="container">
-		<h1>Banaan</h1>
+		<h1>Rob's app</h1>
 		<button id="Aan" data-role="button" onclick="lamp_aan();">Aan</button>
 		<button id="Uit" data-role="button" onclick="lamp_uit();">Uit</button>
 		<div id="successMessage"></div>
@@ -16,7 +16,7 @@
 <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
 			   
 <script type="text/javascript">
-document.addEventListener("deviceready", onDeviceReady, false);
+
 function lamp_aan() {
 	$.ajax({
         url: 'http://192.168.1.54/server.php?power=on'
