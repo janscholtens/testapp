@@ -17,7 +17,7 @@
 <script type="text/javascript">
 document.addEventListener("deviceready", onDeviceReady, false);
 function change_page() {
-    alert("klikkkkkkkkkkkk");
+    alert("klikkkkkakkkkkskk");
 	$.ajax({
         url: 'http://192.168.1.54/server.php',
         type: 'get',
@@ -25,6 +25,8 @@ function change_page() {
     }).done(function(html) {
 		alert("success");
 		$('#successMessage').html(html);
+	}).fail(function(e) {
+		alert(e);
 	}).always(function() {
 		alert("moi");
     });
