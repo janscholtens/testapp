@@ -22,9 +22,8 @@ function change_page() {
     alert("klikkkkkakkkkkskk");
 	$.ajax({
         url: 'http://192.168.1.54/server.php?power=on'
-    }).done(function(html) {
+    }).done(function() {
 		alert("success");
-		$('#successMessage').html(html);
 	}).fail( function(xhr, textStatus, errorThrown) {
         alert(xhr.responseText);
 	}).always(function() {
